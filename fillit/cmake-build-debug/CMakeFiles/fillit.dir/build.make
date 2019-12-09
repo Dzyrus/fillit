@@ -96,25 +96,25 @@ CMakeFiles/fillit.dir/spliter.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fillit.dir/spliter.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lvoyance/Desktop/study/fillit/spliter.c -o CMakeFiles/fillit.dir/spliter.c.s
 
-CMakeFiles/fillit.dir/list.c.o: CMakeFiles/fillit.dir/flags.make
-CMakeFiles/fillit.dir/list.c.o: ../list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lvoyance/Desktop/study/fillit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/fillit.dir/list.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fillit.dir/list.c.o   -c /Users/lvoyance/Desktop/study/fillit/list.c
+CMakeFiles/fillit.dir/solver.c.o: CMakeFiles/fillit.dir/flags.make
+CMakeFiles/fillit.dir/solver.c.o: ../solver.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lvoyance/Desktop/study/fillit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/fillit.dir/solver.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fillit.dir/solver.c.o   -c /Users/lvoyance/Desktop/study/fillit/solver.c
 
-CMakeFiles/fillit.dir/list.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fillit.dir/list.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lvoyance/Desktop/study/fillit/list.c > CMakeFiles/fillit.dir/list.c.i
+CMakeFiles/fillit.dir/solver.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fillit.dir/solver.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lvoyance/Desktop/study/fillit/solver.c > CMakeFiles/fillit.dir/solver.c.i
 
-CMakeFiles/fillit.dir/list.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fillit.dir/list.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lvoyance/Desktop/study/fillit/list.c -o CMakeFiles/fillit.dir/list.c.s
+CMakeFiles/fillit.dir/solver.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fillit.dir/solver.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lvoyance/Desktop/study/fillit/solver.c -o CMakeFiles/fillit.dir/solver.c.s
 
 # Object files for target fillit
 fillit_OBJECTS = \
 "CMakeFiles/fillit.dir/main.c.o" \
 "CMakeFiles/fillit.dir/validator.c.o" \
 "CMakeFiles/fillit.dir/spliter.c.o" \
-"CMakeFiles/fillit.dir/list.c.o"
+"CMakeFiles/fillit.dir/solver.c.o"
 
 # External object files for target fillit
 fillit_EXTERNAL_OBJECTS =
@@ -122,7 +122,7 @@ fillit_EXTERNAL_OBJECTS =
 fillit: CMakeFiles/fillit.dir/main.c.o
 fillit: CMakeFiles/fillit.dir/validator.c.o
 fillit: CMakeFiles/fillit.dir/spliter.c.o
-fillit: CMakeFiles/fillit.dir/list.c.o
+fillit: CMakeFiles/fillit.dir/solver.c.o
 fillit: CMakeFiles/fillit.dir/build.make
 fillit: ../libft/libft.a
 fillit: CMakeFiles/fillit.dir/link.txt

@@ -83,10 +83,10 @@
 		<Unit filename="/Users/lvoyance/Desktop/study/fillit/fillit.h">
 			<Option target="fillit"/>
 		</Unit>
-		<Unit filename="/Users/lvoyance/Desktop/study/fillit/list.c">
+		<Unit filename="/Users/lvoyance/Desktop/study/fillit/main.c">
 			<Option target="fillit"/>
 		</Unit>
-		<Unit filename="/Users/lvoyance/Desktop/study/fillit/main.c">
+		<Unit filename="/Users/lvoyance/Desktop/study/fillit/solver.c">
 			<Option target="fillit"/>
 		</Unit>
 		<Unit filename="/Users/lvoyance/Desktop/study/fillit/spliter.c">

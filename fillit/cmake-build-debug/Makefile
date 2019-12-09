@@ -123,33 +123,6 @@ fillit/fast:
 	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/build
 .PHONY : fillit/fast
 
-list.o: list.c.o
-
-.PHONY : list.o
-
-# target to build an object file
-list.c.o:
-	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/list.c.o
-.PHONY : list.c.o
-
-list.i: list.c.i
-
-.PHONY : list.i
-
-# target to preprocess a source file
-list.c.i:
-	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/list.c.i
-.PHONY : list.c.i
-
-list.s: list.c.s
-
-.PHONY : list.s
-
-# target to generate assembly for a file
-list.c.s:
-	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/list.c.s
-.PHONY : list.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -176,6 +149,33 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/main.c.s
 .PHONY : main.c.s
+
+solver.o: solver.c.o
+
+.PHONY : solver.o
+
+# target to build an object file
+solver.c.o:
+	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/solver.c.o
+.PHONY : solver.c.o
+
+solver.i: solver.c.i
+
+.PHONY : solver.i
+
+# target to preprocess a source file
+solver.c.i:
+	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/solver.c.i
+.PHONY : solver.c.i
+
+solver.s: solver.c.s
+
+.PHONY : solver.s
+
+# target to generate assembly for a file
+solver.c.s:
+	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/solver.c.s
+.PHONY : solver.c.s
 
 spliter.o: spliter.c.o
 
@@ -240,12 +240,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fillit"
-	@echo "... list.o"
-	@echo "... list.i"
-	@echo "... list.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... solver.o"
+	@echo "... solver.i"
+	@echo "... solver.s"
 	@echo "... spliter.o"
 	@echo "... spliter.i"
 	@echo "... spliter.s"

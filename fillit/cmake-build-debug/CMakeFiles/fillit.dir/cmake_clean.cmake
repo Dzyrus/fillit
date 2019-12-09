@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/fillit.dir/list.c.o"
   "CMakeFiles/fillit.dir/main.c.o"
+  "CMakeFiles/fillit.dir/solver.c.o"
   "CMakeFiles/fillit.dir/spliter.c.o"
   "CMakeFiles/fillit.dir/validator.c.o"
   "fillit"

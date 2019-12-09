@@ -1,37 +1,18 @@
-//
-// Created by Laquanda Voyance on 01/12/2019.
-//
 #include "fillit.h"
-void	print_figure_array(char **array, int size)
-{
-	int i = 0;
-
-	while (i < size)
-	{
-		int n = 0;
-		while (n < 8)
-		{
-			printf("%d;", array[i][n]);
-			n++;
-		}
-		printf("%c\n", array[i][8]);
-		i++;
-
-	}
-}
 
 void	print_array(char **array, int size)
 {
-	int i = 0;
+	int i;
 
+	i = 0;
 	while (i < size)
 	{
-
 			ft_putstr(array[i]);
 			i++;
-
 	}
+	ft_putchar('\n');
 }
+
 int 	check_connection(const char *buff)
 {
 	int index;
@@ -58,6 +39,7 @@ int 	check_connection(const char *buff)
 		return (1);
 	return (0);
 }
+
 int		check_file(int result, const char *buff)
 {
 	int index;
@@ -86,24 +68,24 @@ int		check_input(fd)
 {
 	int		result;
 	char	*buff;
-	char	cur_char;
-	char	**figures;
+	char	c;
+	char	*figures[26];
 	int		n_figures;
 
 	n_figures = 0;
-	cur_char = 'A';
+	c = 'A';
 	buff = ft_strnew(21);
 	while ((result = read(fd, buff, 21)) >= 20)
 	{
+		if (result == 0)
+			return (-1);
 		if (check_file(result, buff))
 			return (-1);
-		figures[n_figures] = get_coords(ft_strsplit(buff, '\n'), cur_char++);
+		figures[n_figures] = get_coords(ft_strsplit(buff, '\n'), c++);
 		n_figures++;
 	}
-	printf("%d figures\n", n_figures);
 	if (n_figures > 26 || result != 0)
 		return (-1);
-	print_figure_array(figures, n_figures);
 	solve_map(make_map(), figures, n_figures);
 	return (n_figures);
 }
