@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validator.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lvoyance <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/18 15:15:11 by lvoyance          #+#    #+#             */
+/*   Updated: 2019/12/18 15:15:13 by lvoyance         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 void	print_array(char **array, int size)
@@ -7,13 +19,13 @@ void	print_array(char **array, int size)
 	i = 0;
 	while (i < size)
 	{
-			ft_putstr(array[i]);
-			i++;
+		ft_putstr(array[i]);
+		i++;
 	}
 	ft_putchar('\n');
 }
 
-int 	check_connection(const char *buff)
+int		check_connection(const char *buff)
 {
 	int index;
 	int connection;
@@ -64,28 +76,30 @@ int		check_file(int result, const char *buff)
 	return (0);
 }
 
-int		check_input(fd)
+int		check_input(int fd)
 {
 	int		result;
 	char	*buff;
 	char	c;
 	char	*figures[26];
 	int		n_figures;
+	int		total_read;
 
+	total_read = 0;
 	n_figures = 0;
 	c = 'A';
 	buff = ft_strnew(21);
 	while ((result = read(fd, buff, 21)) >= 20)
 	{
-		if (result == 0)
-			return (-1);
 		if (check_file(result, buff))
 			return (-1);
 		figures[n_figures] = get_coords(ft_strsplit(buff, '\n'), c++);
 		n_figures++;
+		total_read = total_read + result;
 	}
-	if (n_figures > 26 || result != 0)
+	if (n_figures > 26 || result != 0 || n_figures == 0 ||
+	total_read == n_figures * 21)
 		return (-1);
-	solve_map(make_map(), figures, n_figures);
-	return (n_figures);
+	solve_map(make_map(2), figures, n_figures);
+	return (1);
 }

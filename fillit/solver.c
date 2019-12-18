@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   solver.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lvoyance <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/18 15:09:22 by lvoyance          #+#    #+#             */
+/*   Updated: 2019/12/18 15:09:24 by lvoyance         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
-int		solver(char **map, char **figures, int n_figures, int curr_size, int n)
+int		solver(char **map, char **figures, int n_figures, int n)
 {
 	int y;
 	int x;
@@ -8,18 +20,18 @@ int		solver(char **map, char **figures, int n_figures, int curr_size, int n)
 	y = 0;
 	if (n >= n_figures)
 		return (1);
-	while (y < curr_size)
+	while (y < ft_word_len(map[0], '!'))
 	{
 		x = 0;
-		while (x < curr_size)
+		while (x < ft_word_len(map[0], '!'))
 		{
-			if (is_place(figures[n], map, curr_size, y, x))
+			if (is_place(figures[n], map, y, x))
 			{
 				n++;
-				if (solver(map, figures, n_figures, curr_size, n))
+				if (solver(map, figures, n_figures, n))
 					return (1);
 				else
-					put_figure(figures[--n], map, '.', y, x);
+					delete_figure(figures[--n], map, y, x);
 			}
 			x++;
 		}
@@ -37,10 +49,9 @@ int		solve_map(char **map, char **figures, int n_figures)
 	rowindex = 0;
 	n = 0;
 	curr_size = map_size(n_figures);
-	while (!solver(map, figures, n_figures, curr_size, n))
+	while (!solver(make_map(curr_size), figures, n_figures, n))
 	{
-		curr_size++;
-		make_map();
+		make_map(curr_size++);
 	}
 	while (rowindex < curr_size)
 	{
