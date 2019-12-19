@@ -50,9 +50,7 @@ int		solve_map(char **map, char **figures, int n_figures)
 	n = 0;
 	curr_size = map_size(n_figures);
 	while (!solver(make_map(curr_size), figures, n_figures, n))
-	{
 		make_map(curr_size++);
-	}
 	while (rowindex < curr_size)
 	{
 		map[rowindex][curr_size] = '\n';
@@ -61,4 +59,16 @@ int		solve_map(char **map, char **figures, int n_figures)
 	}
 	print_array(map, curr_size);
 	return (0);
+}
+
+int		map_size(int n_figures)
+{
+	int n;
+	int i;
+
+	i = 2;
+	n = n_figures * 4;
+	while (i * i < n)
+		i++;
+	return (i);
 }

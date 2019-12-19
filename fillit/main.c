@@ -14,12 +14,19 @@
 
 int		main(int ac, char **av)
 {
+	int fd;
+	int fd2;
+
+	fd = open(av[1], O_RDONLY);
+	fd2 = open(av[1], O_RDONLY);
 	if (ac != 2)
 	{
 		ft_putstr("usage: ./fillit (tetriminos_file)\n");
 		return (0);
 	}
-	if ((check_input(open(av[1], O_RDONLY))) <= 0)
+	if (check_result(fd) < 0 || check_input(fd2) <= 0)
 		ft_putstr("error\n");
+	close(fd);
+	close(fd2);
 	return (0);
 }

@@ -76,6 +76,21 @@ int		check_file(int result, const char *buff)
 	return (0);
 }
 
+int		check_result(int fd)
+{
+	int		result;
+	char	*buff;
+	int		total_read;
+
+	buff = ft_strnew(21);
+	total_read = 0;
+	while ((result = read(fd, buff, 21)) >= 20)
+		total_read = total_read + result;
+	if (total_read % 21 == 0)
+		return (-1);
+	return (0);
+}
+
 int		check_input(int fd)
 {
 	int		result;
@@ -83,9 +98,7 @@ int		check_input(int fd)
 	char	c;
 	char	*figures[26];
 	int		n_figures;
-	int		total_read;
 
-	total_read = 0;
 	n_figures = 0;
 	c = 'A';
 	buff = ft_strnew(21);
@@ -95,10 +108,8 @@ int		check_input(int fd)
 			return (-1);
 		figures[n_figures] = get_coords(ft_strsplit(buff, '\n'), c++);
 		n_figures++;
-		total_read = total_read + result;
 	}
-	if (n_figures > 26 || result != 0 || n_figures == 0 ||
-	total_read == n_figures * 21)
+	if (n_figures > 26 || result != 0 || n_figures == 0)
 		return (-1);
 	solve_map(make_map(2), figures, n_figures);
 	return (1);

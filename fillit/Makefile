@@ -6,28 +6,28 @@
 #    By: lvoyance <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/19 10:32:39 by lvoyance          #+#    #+#              #
-#    Updated: 2019/09/22 18:12:22 by lvoyance         ###   ########.fr        #
+#    Updated: 2019/12/19 11:21:09 by lvoyance         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 
-SRCS = main.c spliter.c validator.c solver.c ./libft/libft.a
+SRC = validator.c \
+            spliter.c \
+            main.c \
+            solver.c
 
-INCLS = ./includes
+LFT = ./libft/libft.a
 
+FLAGS = -Wall -Wextra -Werror
 
+//.PHONY: all clean fclean re
 
 all: $(NAME)
-
-$(NAME): $(SRCS) fillit.h
-	gcc -Wall -Wextra -Werror $(SRCS) -o fillit
-
+    gcc -I  $(FLAGS) -c $(SRC) $(LFT) -o $(NAME)
 
 clean:
-	/bin/rm -f $(OBJ)
-
+    /bin/rm -f $(NAME)
 fclean: clean
-	/bin/rm -f $(NAME)
-
+    /bin/rm -f $(NAME)
 re: fclean all

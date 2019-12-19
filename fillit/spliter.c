@@ -39,18 +39,6 @@ char	*get_coords(char **str, char value)
 	return (coords);
 }
 
-int		map_size(int n_figures)
-{
-	int n;
-	int i;
-
-	i = 2;
-	n = n_figures * 4;
-	while (i * i < n)
-		i++;
-	return (i);
-}
-
 void	put_figure(char *figure, char **map, int y_map, int x_map)
 {
 	int index;
@@ -83,7 +71,7 @@ void	delete_figure(char *figure, char **map, int y_map, int x_map)
 	}
 }
 
-int		is_place(char *figure, char **map,  int y_map, int x_map)
+int		is_place(char *figure, char **map, int y_map, int x_map)
 {
 	int index;
 	int dy;
