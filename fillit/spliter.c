@@ -36,6 +36,7 @@ char	*get_coords(char **str, char value)
 		rowindex++;
 	}
 	coords[n] = value;
+	ft_memdel((void*)&str);
 	return (coords);
 }
 

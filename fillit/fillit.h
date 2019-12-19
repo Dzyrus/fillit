@@ -6,7 +6,7 @@
 /*   By: lvoyance <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/19 10:58:40 by lvoyance          #+#    #+#             */
-/*   Updated: 2019/12/19 10:58:42 by lvoyance         ###   ########.fr       */
+/*   Updated: 2019/12/19 11:47:58 by lvoyance         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "libft/libft.h"
+# include "./libft/libft.h"
 
 int		main(int ac, char **av);
 int		check_input(int fd);

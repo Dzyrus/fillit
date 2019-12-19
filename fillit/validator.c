@@ -86,6 +86,7 @@ int		check_result(int fd)
 	total_read = 0;
 	while ((result = read(fd, buff, 21)) >= 20)
 		total_read = total_read + result;
+	free(buff);
 	if (total_read % 21 == 0)
 		return (-1);
 	return (0);
@@ -109,6 +110,8 @@ int		check_input(int fd)
 		figures[n_figures] = get_coords(ft_strsplit(buff, '\n'), c++);
 		n_figures++;
 	}
+	free(buff);
+	//free(figures);
 	if (n_figures > 26 || result != 0 || n_figures == 0)
 		return (-1);
 	solve_map(make_map(2), figures, n_figures);

@@ -6,25 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/Users/lvoyance/Desktop/study/fillit/fillit.h
-stdio.h
--
-unistd.h
--
-fcntl.h
--
-libft/libft.h
-/Users/lvoyance/Desktop/study/fillit/libft/libft.h
-
-/Users/lvoyance/Desktop/study/fillit/libft/libft.h
-string.h
--
-stdlib.h
--
-unistd.h
--
-
-/Users/lvoyance/Desktop/study/fillit/spliter.c
-fillit.h
-/Users/lvoyance/Desktop/study/fillit/fillit.h
-
