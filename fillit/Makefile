@@ -6,28 +6,35 @@
 #    By: lvoyance <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/19 10:32:39 by lvoyance          #+#    #+#              #
-#    Updated: 2019/12/19 11:21:09 by lvoyance         ###   ########.fr        #
+#    Updated: 2019/12/19 12:06:01 by lvoyance         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
+SRC = ./src/validator.c \
+      ./src/spliter.c \
+      ./src/main.c \
+      ./src/solver.c
 
-SRC = validator.c \
-            spliter.c \
-            main.c \
-            solver.c
+HDR = ./src/fillit.h
 
-LFT = ./libft/libft.a
+OBJ = *.o
+
+LBFT = libft/
+
+LIB = *.c
 
 FLAGS = -Wall -Wextra -Werror
 
-//.PHONY: all clean fclean re
-
 all: $(NAME)
-    gcc -I  $(FLAGS) -c $(SRC) $(LFT) -o $(NAME)
 
+$(NAME):
+	make -C $(LBFT)
+	gcc $(FLAGS) -o $(NAME)  -I $(HDR) $(SRC) -L. libft/libft.a
 clean:
-    /bin/rm -f $(NAME)
+	/bin/rm -f $(OBJ)
+	make -C $(LBFT) clean
 fclean: clean
-    /bin/rm -f $(NAME)
+	/bin/rm -f $(NAME)
+	make -C $(LBFT) fclean
 re: fclean all
